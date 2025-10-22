@@ -1,30 +1,39 @@
-# REST API Daftar Barang Cuci Sepatu
+````markdown
+# 🧼 REST API Daftar Barang Cuci Sepatu
 
-## Deskripsi Umum
+## 📘 Deskripsi Umum
 
-Proyek ini merupakan tugas responsi untuk modul Pembuatan API dengan JavaScript. [cite_start]API ini dibuat menggunakan Node.js dan Express.js, berfungsi untuk mengelola data sepatu yang sedang dicuci pada sebuah layanan jasa cuci sepatu[cite: 1]. [cite_start]API ini menggunakan Supabase sebagai database-nya [cite: 12] [cite_start]dan di-deploy ke Vercel[cite: 790].
+Proyek ini merupakan tugas responsi untuk modul **Pembuatan API dengan JavaScript**.  
+API ini dibangun menggunakan **Node.js** dan **Express.js** untuk mengelola data sepatu yang sedang dicuci pada layanan **jasa cuci sepatu**.  
+Database yang digunakan adalah **Supabase (PostgreSQL)**, dan proyek ini **dideploy ke Vercel**.
 
-[cite_start]Tujuan utama proyek ini adalah untuk mempermudah proses pencatatan, pemantauan, dan pembaruan status cucian sepatu secara digital melalui REST API sederhana[cite: 1].
+Tujuan utama proyek ini adalah untuk mempermudah proses pencatatan, pemantauan, dan pembaruan status cucian sepatu secara digital melalui REST API sederhana.
 
-## Tujuan
+---
 
-1.  [cite_start]Mengimplementasikan konsep CRUD (Create, Read, Update, Delete) dalam REST API[cite: 1].
-2.  [cite_start]Meningkatkan pemahaman penggunaan Express.js sebagai framework backend[cite: 1].
-3.  [cite_start]Mengelola data menggunakan database **Supabase** (PostgreSQL)[cite: 12, 92].
-4.  [cite_start]Membangun sistem pencatatan yang relevan dengan kebutuhan bisnis nyata[cite: 1].
+## 🎯 Tujuan
 
-## Fitur Utama API
+1. Mengimplementasikan konsep **CRUD (Create, Read, Update, Delete)** dalam REST API.
+2. Meningkatkan pemahaman penggunaan **Express.js** sebagai framework backend.
+3. Mengelola data menggunakan database **Supabase**.
+4. Membangun sistem pencatatan yang relevan dengan kebutuhan bisnis nyata.
 
-| Metode | Endpoint   | Deskripsi                                                                          |
-| :----- | :--------- | :--------------------------------------------------------------------------------- |
-| GET    | /items     | Menampilkan seluruh daftar sepatu yang sedang dicuci.                              |
-| POST   | /items     | Menambahkan data sepatu baru ke dalam daftar.                                      |
-| PUT    | /items/:id | Memperbarui status atau data sepatu (misalnya dari Sedang Dicuci menjadi Selesai). |
-| DELETE | /items/:id | Menghapus data sepatu yang sudah selesai dicuci.                                   |
+---
 
-## Struktur Data (Supabase)
+## ⚙️ Fitur Utama API
 
-Contoh struktur data sepatu yang disimpan di tabel `items`:
+| Metode     | Endpoint     | Deskripsi                                                                              |
+| :--------- | :----------- | :------------------------------------------------------------------------------------- |
+| **GET**    | `/items`     | Menampilkan seluruh daftar sepatu yang sedang dicuci.                                  |
+| **POST**   | `/items`     | Menambahkan data sepatu baru ke dalam daftar.                                          |
+| **PUT**    | `/items/:id` | Memperbarui status atau data sepatu (misalnya dari _Sedang Dicuci_ menjadi _Selesai_). |
+| **DELETE** | `/items/:id` | Menghapus data sepatu yang sudah selesai dicuci.                                       |
+
+---
+
+## 🧩 Struktur Data (Supabase)
+
+Contoh struktur data tabel `items`:
 
 ```json
 {
@@ -35,61 +44,101 @@ Contoh struktur data sepatu yang disimpan di tabel `items`:
   "tanggalSelesai": null
 }
 ```
-
 ````
 
-Keterangan:
+**Keterangan:**
 
-- `id` → UUID (Primary Key) unik yang dibuat oleh Supabase.
+- `id` → UUID unik yang dibuat oleh Supabase.
 - `nama` → Nama sepatu atau merek pelanggan.
-- `status` → Status proses cuci (misal: "Sedang Dicuci", "Selesai").
-- `tanggalMasuk` → Tanggal sepatu diterima (tipe data `date`).
-- `tanggalSelesai` → Tanggal sepatu selesai (tipe data `date`, bisa `null`).
+- `status` → Status proses cuci (`Sedang Dicuci`, `Selesai`, dll).
+- `tanggalMasuk` → Tanggal sepatu diterima (`date`).
+- `tanggalSelesai` → Tanggal sepatu selesai (`date`, dapat bernilai `null`).
 
-## Bonus Fitur
+---
 
-[cite\_start]API ini juga dilengkapi dengan fitur filter berdasarkan status[cite: 1], misalnya:
-`GET /items?status=Selesai`
-akan menampilkan hanya sepatu yang sudah selesai dicuci.
+## 🔍 Bonus Fitur
 
-## Alur Kerja API
+API ini mendukung **filter berdasarkan status**, contoh:
 
-1.  [cite\_start]Pengguna mengirimkan permintaan HTTP (GET, POST, PUT, DELETE) ke server Vercel[cite: 1].
-2.  [cite\_start]Server memproses permintaan menggunakan Express.js[cite: 1].
-3.  [cite\_start]Controller memanggil Model untuk berinteraksi (CRUD) dengan database Supabase[cite: 12].
-4.  [cite\_start]Server mengembalikan respons dalam format JSON[cite: 1].
+```
+GET /items?status=Selesai
+```
 
-## Teknologi yang Digunakan
+Menampilkan hanya sepatu yang sudah selesai dicuci.
 
-- [cite\_start]**Node.js**: Runtime environment untuk menjalankan JavaScript di sisi server[cite: 1].
-- [cite\_start]**Express.js**: Framework untuk membangun REST API[cite: 1, 67].
-- [cite\_start]**Supabase**: Backend-as-a-Service berbasis PostgreSQL untuk database[cite: 1, 92].
-- [cite\_start]**Vercel**: Platform untuk deployment serverless[cite: 1, 790].
+---
 
-## Langkah Instalasi & Menjalankan Lokal
+## 🔄 Alur Kerja API
 
-1.  Clone repositori ini: `git clone https://github.com/RadjaFisabilillah/Responsi-PPB-Mod1-Sem5.git`
-2.  Masuk ke direktori: `cd [NAMA_FOLDER]`
-3.  Install dependensi: `npm install`
-4.  [cite\_start]Buat file `.env` di root proyek[cite: 647].
-5.  [cite\_start]Isi `.env` dengan kredensial Supabase Anda[cite: 656]:
-    ```
-    SUPABASE_URL=...
-    SUPABASE_KEY=...
-    PORT=3000
-    ```
-6.  [cite\_start]Jalankan server pengembangan: `npm run dev` [cite: 700]
-7.  [cite\_start]API akan berjalan di `http://localhost:3000` [cite: 701]
+1. Pengguna mengirimkan permintaan HTTP (`GET`, `POST`, `PUT`, `DELETE`) ke server **Vercel**.
+2. Server memproses permintaan menggunakan **Express.js**.
+3. **Controller** memanggil **Model** untuk berinteraksi (CRUD) dengan **Supabase**.
+4. Server mengembalikan respons dalam format **JSON**.
 
-## Link Deploy Vercel
+---
 
-_(Ganti dengan link Anda setelah deploy)_
-[cite\_start]`https://responsi-ppb-mod1-sem5.vercel.app/` [cite: 848, 851]
+## 🛠️ Teknologi yang Digunakan
 
-## Contoh Request dan Response
+- **Node.js** – Runtime environment untuk JavaScript di sisi server.
+- **Express.js** – Framework untuk membangun REST API.
+- **Supabase** – Database berbasis PostgreSQL (Backend-as-a-Service).
+- **Vercel** – Platform untuk deployment serverless.
 
-**`GET /items`**
-Response (200 OK):
+---
+
+## 💻 Langkah Instalasi & Menjalankan Lokal
+
+1. Clone repositori:
+
+   ```bash
+   git clone https://github.com/RadjaFisabilillah/Responsi-PPB-Mod1-Sem5.git
+   ```
+
+2. Masuk ke direktori proyek:
+
+   ```bash
+   cd [NAMA_FOLDER]
+   ```
+
+3. Install dependensi:
+
+   ```bash
+   npm install
+   ```
+
+4. Buat file `.env` di root proyek dan isi dengan kredensial Supabase:
+
+   ```env
+   SUPABASE_URL=...
+   SUPABASE_KEY=...
+   PORT=3000
+   ```
+
+5. Jalankan server pengembangan:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Akses API di:
+
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+## 🌐 Link Deploy Vercel
+
+`https://responsi-ppb-mod1-sem5.vercel.app/`
+
+---
+
+## 📡 Contoh Request dan Response
+
+### **GET /items**
+
+**Response (200 OK):**
 
 ```json
 [
@@ -103,8 +152,11 @@ Response (200 OK):
 ]
 ```
 
-**`POST /items`**
-Body Request:
+---
+
+### **POST /items**
+
+**Body Request:**
 
 ```json
 {
@@ -114,7 +166,7 @@ Body Request:
 }
 ```
 
-Response (201 Created):
+**Response (201 Created):**
 
 ```json
 {
@@ -126,8 +178,13 @@ Response (201 Created):
 }
 ```
 
-**`PUT /items/:id`** (misal: `PUT /items/b2c3d4e5-f6a7-8901-2345-67890abcdef1`)
-Body Request:
+---
+
+### **PUT /items/:id**
+
+Contoh: `PUT /items/b2c3d4e5-f6a7-8901-2345-67890abcdef1`
+
+**Body Request:**
 
 ```json
 {
@@ -136,7 +193,7 @@ Body Request:
 }
 ```
 
-Response (200 OK):
+**Response (200 OK):**
 
 ```json
 {
@@ -148,16 +205,16 @@ Response (200 OK):
 }
 ```
 
-**`DELETE /items/:id`** (misal: `DELETE /items/b2c3d4e5-f6a7-8901-2345-67890abcdef1`)
-Response (200 OK):
+---
+
+### **DELETE /items/:id**
+
+Contoh: `DELETE /items/b2c3d4e5-f6a7-8901-2345-67890abcdef1`
+
+**Response (200 OK):**
 
 ```json
 {
   "message": "Data sepatu berhasil dihapus."
 }
 ```
-
-```
-
-```
-````
