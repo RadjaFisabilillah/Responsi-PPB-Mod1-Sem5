@@ -220,7 +220,3 @@ Contoh: `DELETE /items/b2c3d4e5-f6a7-8901-2345-67890abcdef1`
   "message": "Data sepatu berhasil dihapus."
 }
 ```
-
-```
-
-```
