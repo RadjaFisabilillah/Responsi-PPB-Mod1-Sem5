@@ -1,4 +1,3 @@
-````markdown
 # 🧼 REST API Daftar Barang Cuci Sepatu
 
 ## 📘 Deskripsi Umum
@@ -44,6 +43,7 @@ Contoh struktur data tabel `items`:
   "tanggalSelesai": null
 }
 ```
+
 ````
 
 **Keterangan:**
@@ -218,3 +218,4 @@ Contoh: `DELETE /items/b2c3d4e5-f6a7-8901-2345-67890abcdef1`
   "message": "Data sepatu berhasil dihapus."
 }
 ```
+````
