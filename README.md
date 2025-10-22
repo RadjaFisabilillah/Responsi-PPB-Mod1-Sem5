@@ -1,7 +1,3 @@
-[cite\_start]Tentu, ini adalah kode lengkap untuk file `README.md` yang menggabungkan deskripsi proyek "Cuci Sepatu" Anda dengan tumpukan teknologi (Supabase dan Vercel) dari modul praktikum[cite: 1, 2].
-
-Anda bisa langsung menyalin dan menempelkan (paste) seluruh blok kode di bawah ini ke dalam file `README.md` di VS Code.
-
 ````markdown
 # REST API Daftar Barang Cuci Sepatu
 
