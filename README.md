@@ -72,7 +72,7 @@ akan menampilkan hanya sepatu yang sudah selesai dicuci.
 
 ## Langkah Instalasi & Menjalankan Lokal
 
-1.  Clone repositori ini: `git clone [URL_GITHUB_ANDA]`
+1.  Clone repositori ini: `git clone https://github.com/RadjaFisabilillah/Responsi-PPB-Mod1-Sem5.git`
 2.  Masuk ke direktori: `cd [NAMA_FOLDER]`
 3.  Install dependensi: `npm install`
 4.  [cite\_start]Buat file `.env` di root proyek[cite: 647].
@@ -88,7 +88,7 @@ akan menampilkan hanya sepatu yang sudah selesai dicuci.
 ## Link Deploy Vercel
 
 _(Ganti dengan link Anda setelah deploy)_
-[cite\_start]`https://[NAMA-PROYEK-ANDA].vercel.app` [cite: 848, 851]
+[cite\_start]`https://responsi-ppb-mod1-sem5.vercel.app/` [cite: 848, 851]
 
 ## Contoh Request dan Response
 
