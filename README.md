@@ -44,6 +44,10 @@ Contoh struktur data tabel `items`:
 }
 ```
 
+---
+
+---
+
 **Keterangan:**
 
 - `id` → UUID unik yang dibuat oleh Supabase.
